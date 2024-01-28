@@ -3,16 +3,16 @@ package linkedlist
 import "fmt"
 
 
-type Node struct{
+type CSNode struct{
 	data	int
-	next	*Node
+	next	*CSNode
 } 
 
-type List struct {
-	head *Node
+type CSList struct {
+	head *CSNode
 }
 
-func (l *List) Display(){
+func (l *CSList) Display(){
 	if l.head==nil{
 		fmt.Println("empty list")
 		return
@@ -27,8 +27,8 @@ func (l *List) Display(){
 	}
 }
 
-func (l *List) Add(value int){
-	newNode :=&Node{data: value}
+func (l *CSList) Add(value int){
+	newNode :=&CSNode{data: value}
 
 	if l.head==nil{
 		l.head=newNode
@@ -43,7 +43,7 @@ func (l *List) Add(value int){
 	newNode.next=l.head
 }
 
-func (l *List) Remove(value int) {
+func (l *CSList) Remove(value int) {
 	if l.head==nil{
 		fmt.Println("nothing to remove, empty list")
 		return

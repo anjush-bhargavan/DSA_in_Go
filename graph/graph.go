@@ -23,7 +23,6 @@ func(g *Graph) RemoveVertex(vertex int) {
 		
 		for i := 0 ; i<len(v) ; i++ {
 			if v[i] == vertex {
-				// fmt.Println(v[:i],v[i+1:])
 				g.Vertex[k] = append(v[:i],v[i+1:]... )
 				break
 			}
