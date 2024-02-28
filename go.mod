@@ -1,3 +1,3 @@
-module dsa
+module github.com/anjush-bhargavan/dsa
 
-go 1.21.4
+go 1.22.0

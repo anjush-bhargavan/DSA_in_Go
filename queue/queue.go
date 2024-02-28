@@ -1,46 +1,34 @@
 package queue
 
-import "fmt"
 
-type Node struct{
-	data int
-	next *Node
+type Node struct {
+	Val int 
+	Next *Node
 }
 
-type Queue struct{
-	front *Node
-	rear *Node
+type Queue struct {
+	Front *Node
+	Rear *Node
 }
 
-func (q *Queue) Enqueue(value int) {
-	newNode :=&Node{data: value}
-	if q.front== nil{
-		q.front=newNode
-		q.rear=newNode
-	}
-
-	q.rear.next=newNode
-	q.rear=newNode
+func NewQueue() *Queue {
+	return &Queue{}
 }
 
-func (q *Queue) Dequeue(){
-	if q.front==nil{
-		fmt.Println("empty queue")
+func (q *Queue) Enqueue(data int) {
+	newNode := &Node{Val: data}
+	if q.Front == nil {
+		q.Rear = newNode
+		q.Front = newNode
 		return
 	}
+	q.Rear.Next = newNode
+	q.Rear = newNode 
 
-	q.front=q.front.next
 }
 
-func (q *Queue) DisplayQueue(){
-	if q.front==nil {
-		fmt.Println("empty queue")
-		return
-	}
-
-	curr := q.front
-	for curr!=nil{
-		fmt.Println(curr.data)
-		curr=curr.next
-	}
+func (q *Queue) Dequeue() *Node {
+	node := q.Front
+	q.Front = q.Front.Next
+	return node
 }

@@ -1,156 +1,117 @@
 package main
 
 import (
-	// "dsa/sort"
+	// "fmt"
 
-	// "dsa/recursion"
-	// tree "dsa/tree/bst"
-	// "dsa/search"
-	// "dsa/stack"
-	// "dsa/heap"
-	"dsa/graph"
-	// "dsa/trie"
-	"fmt"
+	// "github.com/anjush-bhargavan/dsa/trie"
+	// "github.com/anjush-bhargavan/dsa/search"
+	// "github.com/anjush-bhargavan/dsa/hashtable"
+	// "github.com/anjush-bhargavan/dsa/sort"
+	// "github.com/anjush-bhargavan/dsa/queue"
+	bst "github.com/anjush-bhargavan/dsa/BST"
+	// "fmt"
+	// "github.com/anjush-bhargavan/dsa/graph"
+	// "github.com/anjush-bhargavan/dsa/heap"
+	// "github.com/anjush-bhargavan/dsa/linked_list/single"
 )
-
-// "dsa/linkedlist"
-// "dsa/search"
-// "fmt"
-
-
-
-func main(){
-	
-	g := &graph.Graph{
-		Vertex: make(map[int][]int),
-	} 
-	g.Insert(3,4,false)
-	g.Insert(3,2,false)
-	// g.Insert(4,1,false)
-	g.Insert(2,4,false)
-	g.Insert(2,1,false)
-	g.Insert(1,5,false)
-	// g.RemoveVertex(2)
-	// g.RemoveEdge(2,4,true)
-	// g.DFS(2)
-	fmt.Println(g.IsPathExists(4,2))
-	// g.Display()
- 
-	// trie := trie.NewSuffixTrie()
-
-	// trie.Trie("black")
-	// trie.Trie("big bang")
-	// trie.PrefixString("paper")
-	// trie.Trie("amazon")
-	// trie.Trie("amazing")
-
-	// fmt.Println(trie.Contains("pap"))
-
-	// arr:=[]int{3,7,6,15,8,11,9,44,35,2,1}
-
-	// h :=&heap.Heap{}
-
-	// h.BuildHeap(arr)
-	// h.Insert(10)
-	// h.Insert(15)
-	// h.Insert(1)
-	// h.Insert(2)
-	// h.Remove()
-	// h.BuildHeap(arr)
-	// fmt.Println(h.Peek())
-	// h.Display()
+func main() {
+	arr := []int{6, 3, 2, 17, 1, 9, 78, 6}
+	// heap.HeapSort(arr)
 	// fmt.Println(arr)
-
-
-	// sort.SelectionSort(arr)
+	// result := sort.MergeSort(arr)
+	// result := sort.QuickSort(arr)
 	// sort.BubbleSort(arr)
 	// sort.InsertionSort(arr)
-	// result:=sort.MergeSort(arr)
-	// sort.QuickSort(arr)
-	// fmt.Println(arr)
-
-	// tree := &tree.BSTree{}
-	// fmt.Println()
-	// tree.Insert(10)
-	// tree.Insert(5)
-	// tree.Insert(16)
-	// tree.Insert(14)
-	// tree.Insert(3)
-	// tree.Insert(6)
-	// tree.Insert(12)
-	// tree.Insert(8)
-	// tree.Insert(8)
-	// tree.Insert(18)
-	// tree.Remove(10)
-	// if tree.Contains(10){
-	// 	fmt.Println("in")
-	// }else{
-	// 	fmt.Println("no")
+	// sort.SelectionSort(arr)
+	// fmt.Println(result)
+	// fmt.Println(search.BinarySearchRecursive(arr,16,0,len(arr)))
+	// q := queue.NewDeQueue()
+	// for _, v := range arr {
+	// 	q.PushRear(v)
 	// }
-	// tree.InOrder()
-	// fmt.Println("")
-	// tree.PreOrder()
-	// fmt.Println("")
-	// tree.PostOrder()
-	// fmt.Println(tree.FindClosest(13))
+	// // q.PopFront()
+	// q.PushFront(4)
+	// queue.Display(q.Front)
+
+	// h := hashtable.NewHashTable(5)
+
+	// h.Put(1,11)
+	// h.Put(2,22)
+	// h.Put(3,33)
+	// h.Put(6,66)
+	// h.Put(7,77)
+	// h.Remove(7)
+
+	// fmt.Println(h.Get(7))
 
 
-	// t:=recursion.FibonacciSeries(8)
-	// fmt.Println(t)
-	// index:=search.BinarySearchString("abcdef",'d')
-	// fmt.Println(index)
 
-	// arr :=[]int{1,2,3,4,5,6,7,8}
-	// fmt.Println(search.BinarySearchR(arr,5,0,7))
 
-	// list:=&linkedlist.List{} 
 
-	// // list.Add(8)
-	// list.Add(5)
-	// list.Add(2)
-	// list.Add(4)
-	// list.Add(1)
-	// list.Add(3)
-	// list.Add(1)
-	// list.Add(1)
-	// list.Remove(3)
-	// list.InsertAfter(1,7)
-	// list.Reverse()
-	// list.Search(1)
-	// list.RemoveDuplicates()
-	// list.Display()
-	// list.ReverseDisplay()
 
-	// stack := &stack.Stack{}
-	// stack.Push(1)
-	// stack.Push(2)
-//  stack.Push(3)
-// 	stack.Pop()
-// 	stack.Pop()
-// data:=stack.Peak()
-// fmt.Println(data)
-// if stack.Isempty(){
-// 	fmt.Println("empty")
-// }else{
-// 	fmt.Println("not empty")
-// }
-// 	stack.DisplayStack()
+	// l := &single.List{}
+	// for _, v := range arr {
+		
+	// 	l.Add(v)
+	// }
+	// fmt.Println("hi")
+	// // l.InsetAtIndex(10,2)
+	// // l.Reverse()
+	// rev := single.MergeSort(l.Head)
+	// fmt.Println("middle is :",single.Middle(rev).Val)
+	// new := single.ReursiveReverse(l.Head)
+	// l.Display(new)
+	// fmt.Println(single.IsPallindrome(l.Head))
 
-	// queue :=&queue.Queue{}
-	// queue.Enqueue(1)
-	// queue.Enqueue(2)
-	// queue.Enqueue(3)
-	// queue.Enqueue(4)
+	t := &bst.BST{}
 
-	// queue.Dequeue()
-	// queue.Dequeue()
-	// queue.DisplayQueue()
+	// m := heap.NewHeap()
+	for _,v := range arr {
+	// m.Push(v)
+	t.Insert(v)
+	}
+	t.Remove(3)
+	t.InOrder()
+	// x := 65
+	// fmt.Println(t.IsBalanced())
+	// fmt.Println("\nHeight of the tree",bst.FindDepth(t.Root))
+	// fmt.Printf("\nDepth of the node %d is %d\n",7,bst.FindHeight(9,t.Root))
+	// fmt.Printf("\nCloset node to %d is %d",4,bst.FindClosest(t.Root,11).Val)
+	// fmt.Printf("\n the successor of %d is %d ",x,bst.Successor(x,t.Root))
+	// fmt.Println("Second min is : ",bst.SecondMin(t.Root))
+	// m.Pop()
+	// m.Pop()
+	// m.Display()
+	// fmt.Println(m.)
 
-	// s:= string.Encode("hai",28)
-	// fmt.Println(s)
+	// g := graph.NewGraph()
 
-	// n:=recursion.Factorial(5)
-	// fmt.Println(n)
+	// g.Insert(1, 2)
+	// g.Insert(3, 4)
+	// g.Insert(1, 3)
+	// g.Insert(1, 5)
+	// g.Insert(1, 7)
+	// g.Insert(2, 4)
+	// g.Insert(8, 1)
 
-	// recursion.Sample(5)
+	// g.BFS(8)
+	// visited := make(map[int]bool)
+	// fmt.Println(g.IsPathExists(8, 7))
+	// g.DFS(8,visited)
+	// g.RemoveEdge(1,5)
+	// g.RemoveVertex(1)
+	// g.Display()
+
+	// t := trie.NewTrie()
+
+	// t.Insert("bigbang")
+	// t.Insert("big")
+
+	// t.Remove("bigbang")
+	// t.SuffixTrie("bigbang")
+	// fmt.Println(t.Contains("hinadh"))
+	// fmt.Println(t.Contains("hello"))
+	// fmt.Println(t.Contains("bigbang"))
+	// fmt.Println(t.Contains("big"))
+
 }
