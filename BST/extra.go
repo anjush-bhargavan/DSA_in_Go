@@ -3,83 +3,50 @@ package bst
 import "math"
 
 
-func FindDepth(root *Node) int {
-	if root == nil {
-		return 0
+func FindHeight(Root *Node) int {
+	if Root == nil {
+		return -1
 	}
-	left := FindDepth(root.Left)
-	right := FindDepth(root.Right)
+	left := FindHeight(Root.Left)
+	right := FindHeight(Root.Right)
 
-	if left < right {
-		return right + 1
-	}
-	return left + 1
-}
-
-func FindHeight(data int,root *Node) int {
-	curr := root
-	for curr != nil {
-		if data < curr.Val {
-			curr = curr.Left
-		}else if data > curr.Val {
-			curr = curr.Right
-		}else{
-			break
-		}
-	}
-	return FindDepth(curr)
-}
-
-var flag = 0
-
-func (t *BST) IsBalanced() bool {
-	isBalanceHelper(t.Root)
-	return flag == 0
-}
-
-func  isBalanceHelper(root *Node) int {
-	if root == nil {
-		return 0
-	}
-
-	left := isBalanceHelper(root.Left)
-	right := isBalanceHelper(root.Right)
-
-	if left < right {
-		if right - left > 1 {
-			flag = 1
-		}
-		return right + 1
-	}
-	if left - right > 1 {
-		flag = 1
-	}
-	return left + 1
-}
-
-func Validate(node *Node) bool {
-	if node == nil {
-		return true
-	}
-	if node.Val <= getMax(node.Left) {
-		return false
-	} 
-	if node.Val >= getMin(node.Right) {
-		return false
-	}
-
-	if Validate(node.Left) || Validate(node.Right) {
-		return false
-	}
-	return true
+	return max(left,right) + 1
 }
 
 
-func getMax(node *Node) int {
-	if node.Right == nil {
+func FindDepth(Root *Node,val int,depth int) int {
+	if Root == nil {
+		return -1
+	}
+	if Root.Val == val {
+		return depth
+	}
+	leftDepth := FindDepth(Root.Left,val,depth+1)
+	if leftDepth != -1 {
+		return leftDepth
+	}
+	
+	return FindDepth(Root.Right,val,depth+1)
+} 
+
+
+func IsBalanced(root *Node) bool {
+	left := FindHeight(root.Left)
+	right := FindHeight(root.Right)
+
+	return max(left,right) - min(left,right) <= 1
+}
+
+func IsValid(root *Node) bool {
+	return root.Val < GetMin(root.Right) && root.Val > GetMax(root.Left) 
+}
+
+
+func GetMax(node *Node) int {
+	if node.Left == nil {
 		return node.Val
 	}
-	return getMax(node.Right)
+	return GetMax(node.Left)
 }
 
 func FindClosest(node *Node,data int) *Node {
@@ -116,7 +83,7 @@ func Successor(data int,root *Node) int{
 		}else {
 			if curr.Right != nil {
 
-				result = getMin(curr.Right)
+				result = GetMin(curr.Right)
 			}
 			break
 		}

@@ -63,18 +63,18 @@ func removeHelper(data int, currNode *Node) *Node {
 			}else if currNode.Right == nil {
 				return currNode.Left
 			}
-			currNode.Val = getMin(currNode.Right)
+			currNode.Val = GetMin(currNode.Right)
 			currNode.Right = removeHelper(currNode.Val,currNode.Right)
 		}
 	}
 	return currNode
 }
 
-func getMin(node *Node) int {
+func GetMin(node *Node) int {
 	if node.Left == nil {
 		return node.Val
 	}
-	return getMin(node.Left)
+	return GetMin(node.Left)
 }
 
 func (t *BST) InOrder() {
